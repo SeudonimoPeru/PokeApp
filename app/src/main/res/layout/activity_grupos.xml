@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:clickable="true"
+	android:focusable="true"
+	android:keepScreenOn="true"
+	android:orientation="vertical">
+
+
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/barlayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		app:liftOnScroll="true">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:animateLayoutChanges="true"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/heigh_toolbar"
+				android:gravity="center_horizontal|center_vertical">
+
+				<androidx.appcompat.widget.AppCompatImageView
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:src="@drawable/logo_icon" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center_horizontal"
+
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/title"
+					android:textStyle="bold"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Región XXXX" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textStyle="bold"
+					android:text="Lista de grupos" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/ap_swpRefresh"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/barlayout"
+		android:layout_alignParentBottom="true"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:animateLayoutChanges="true">
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/ap_rcvRegions"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				tools:listitem="@layout/item_grupo" />
+
+
+		</RelativeLayout>
+
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:id="@+id/btnAdd"
+		android:layout_alignParentBottom="true"
+		android:layout_margin="20dp"
+		android:backgroundTint="@color/red"
+		android:src="@drawable/ic_add"
+		/>
+</RelativeLayout>

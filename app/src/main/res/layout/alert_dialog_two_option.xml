@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center">
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/rootLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="20dp"
+		app:cardBackgroundColor="@color/white"
+		app:cardCornerRadius="28dp"
+		app:cardUseCompatPadding="true">
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:paddingStart="24dp"
+			android:paddingTop="24dp"
+			android:paddingEnd="24dp"
+			android:paddingBottom="24dp">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/ivIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				tools:visibility="visible" />
+
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/tvTitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:gravity="center"
+				android:textColor="@color/black"
+				android:textSize="18sp"
+				tools:text="TITULO"
+				android:textStyle="bold"
+				tools:visibility="visible" />
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/tvContent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="left"
+				android:textColor="@color/black"
+				android:textSize="13sp"
+				tools:text="Descripción"
+				tools:visibility="visible" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/etNombreGrupo"
+				android:hint="Nombre del grupo"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:divider="@drawable/space_inter_linearlayout_20dp"
+				android:orientation="horizontal"
+				android:showDividers="middle">
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnCancelar"
+					android:layout_width="wrap_content"
+					android:layout_height="58dp"
+					android:layout_marginTop="12dp"
+					android:layout_weight="1"
+					android:backgroundTint="@color/white"
+					android:gravity="center"
+					android:letterSpacing="0"
+					android:orientation="horizontal"
+					android:text="Cancelar"
+					android:textAllCaps="false"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					app:cornerRadius="8dp" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAcept"
+					android:layout_width="wrap_content"
+					android:layout_height="58dp"
+					android:layout_marginTop="12dp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:letterSpacing="0"
+					android:orientation="horizontal"
+					app:backgroundTint="@color/red"
+					android:text="Aceptar"
+					android:textAllCaps="false"
+					android:textColor="@color/white"
+					android:textStyle="bold"
+					app:cornerRadius="8dp" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+
+	</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
