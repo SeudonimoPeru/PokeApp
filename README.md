@@ -1,4 +1,4 @@
-# appNoticias
+# PokeApp
 
 
 VIEW:     En esta capa se crea  todo lo relacionado al manejo de las vistas (activity , viewmodel, adapter).
