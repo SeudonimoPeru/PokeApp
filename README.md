@@ -24,3 +24,5 @@ Se proyecta que el proyecto puede ser  en un futuro mas estructurado por el cual
 . Utilizar  inyección a futuro
 . Utilizar navigation component y manejarlo por fragment
 . Implementar databinding y acortar código
+
+PARA PROBLEMAS DE AUTH , ENVIAR  SU SHA1 A jhon.soliscalderon1@gmail.com
