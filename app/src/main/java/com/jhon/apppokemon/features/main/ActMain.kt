@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jhon.apppokemon.activity.PrincipalActivity
 import com.jhon.apppokemon.databinding.ActivityMainBinding
 import com.jhon.apppokemon.features.dialogmygroup.DialogMyGroup
+import com.jhon.apppokemon.features.dialogpokemonregion.DialogAllPokemonForRegion
 import com.jhon.apppokemon.features.grupos.ActGrupos
 import com.jhon.apppokemon.features.main.adapter.AdapterRegions
+import com.jhon.data.model.bean.PokedexResponse.PokemonEntry
 import com.jhon.data.model.bean.grupo.Grupo
 import com.jhon.data.model.bean.region.Region
 
@@ -21,12 +23,12 @@ class ActMain : PrincipalActivity() {
         override fun onClick(regi: Region) {
             //VOY A WEB VIEW
 
-
-            val intent = Intent(baseContext, ActGrupos::class.java).apply {
-                putExtra("name_region", regi.name)
-                putExtra("id_location", regi.url.replace("https://pokeapi.co/api/v2/location/", ""))
-            }
-            startActivity(intent)
+            viewModel.loadInfoRegion(regi.name)
+//            val intent = Intent(baseContext, ActGrupos::class.java).apply {
+//                putExtra("name_region", regi.name)
+//                putExtra("id_location", regi.url.replace("https://pokeapi.co/api/v2/location/", ""))
+//            }
+//            startActivity(intent)
 
         }
 
@@ -67,8 +69,15 @@ class ActMain : PrincipalActivity() {
         }
 
         viewModel.lstGrupos.observe(this) {
-            if(it.isNotEmpty())
-            showDialogAddGroup(it)
+            if(it.isNotEmpty()){
+                showDialogAddGroup(it)
+            }
+        }
+
+        viewModel.pokedexResponse.observe(this) {
+            it?.let {
+                showDialogPokemon(it.pokemon_entries)
+            }
         }
 
 
@@ -80,6 +89,16 @@ class ActMain : PrincipalActivity() {
             listgrupo,
             title = "Mis Grupos",
             onClickConfirmCancel = { }
+
+        ).show(supportFragmentManager, "dialog_add")
+    }
+
+    private fun showDialogPokemon(listgrupo: List<PokemonEntry>) {
+        hideProgress()
+        DialogAllPokemonForRegion(
+            listgrupo,
+            title = "Pokemones ",
+
 
         ).show(supportFragmentManager, "dialog_add")
     }

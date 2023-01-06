@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center">
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/rootLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="20dp"
+		app:cardBackgroundColor="@color/white"
+		app:cardCornerRadius="28dp"
+		app:cardUseCompatPadding="true">
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:paddingStart="24dp"
+			android:paddingTop="24dp"
+			android:paddingEnd="24dp"
+			android:paddingBottom="24dp">
+
+
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/tvTitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:fontFamily="@font/font_bold"
+				android:gravity="center"
+				android:textColor="@color/black"
+				android:textSize="18sp"
+				android:textStyle="bold"
+				tools:text="Pokemones"
+				tools:visibility="visible" />
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/ap_rcvRegions"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				tools:listitem="@layout/item_grupo" />
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:divider="@drawable/space_inter_linearlayout_20dp"
+				android:orientation="horizontal"
+				android:showDividers="middle">
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnCerrar"
+					android:layout_width="match_parent"
+					android:layout_height="58dp"
+					android:layout_marginTop="12dp"
+					app:backgroundTint="@color/red"
+					android:gravity="center"
+					android:letterSpacing="0"
+					android:orientation="horizontal"
+					android:text="Cerrar"
+					android:textStyle="bold"
+					android:textAllCaps="false"
+					android:textColor="@color/white"
+					app:cornerRadius="8dp" />
+
+
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+
+	</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
